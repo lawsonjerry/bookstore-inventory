@@ -23,7 +23,7 @@ function buy(purchased, title, price, genre, quantity) {
 
 
 
-console.log(buy(purchased, "pattern recognition", 1299, "fiction", 3))
+
 
 
 module.exports = { buy };
