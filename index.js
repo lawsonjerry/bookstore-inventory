@@ -1,8 +1,11 @@
 const inform = console.log;
+const { readJSONFile, writeJSONFile } = require("./read_write");
 
 function run() {
   const action = process.argv[2];
   const books = process.argv[3];
+  let booksPurchased = readJSONFile("./data", "purchased.json");
+
   switch (action) {
     case "buy":
       inform(action);
@@ -23,7 +26,7 @@ function run() {
       inform(action);
       break;
     case "view":
-      inform(action);
+      inform(action,booksPurchased );
       break;
     default:
       inform("There was an error.");
