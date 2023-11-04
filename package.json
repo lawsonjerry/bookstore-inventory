@@ -1,0 +1,25 @@
+{
+  "name": "bookstore-inventory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "buy": "node index.js buy",
+    "cart": "node index.js cart",
+    "detail": "node index.js detail",
+    "return": "node index.js return",
+    "total": "node index.js total",
+    "update": "node index.js update",
+    "view": "node index.js view"
+  },
+  "keywords": [],
+  "author": "will do",
+  "license": "ISC",
+  "devDependencies": {
+    "chalk": "^5.3.0",
+    "faker": "^5.5.3",
+    "jest": "^29.7.0",
+    "nanoid": "^5.0.2"
+  }
+}
