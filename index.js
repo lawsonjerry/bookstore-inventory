@@ -2,6 +2,7 @@ const inform = console.log; //logs a message to the console
 const { readJSONFile, writeJSONFile } = require("./read_write"); //imported functions used to read and write JSON files
 const { buy } = require("./src/buy"); //imported function used to create books
 const { detail } = require("./src/detail") //imported function used to view detail of book by ibsn
+const { remove } = require("./src/remove") //imported function used to remove a book by ibsn
 
 function run() {
   let writeToFile = false;
@@ -34,8 +35,9 @@ function run() {
       const viewDetail = detail(booksPurchased, ibsn)
       inform(action, viewDetail);
       break;
-    case "return":
-      inform(action);
+    case "remove":
+      const removeBook = remove(booksPurchased, ibsn)
+      inform(action, removeBook);
       break;
     case "total":
       inform(action);
