@@ -28,6 +28,6 @@ function detail(purchased, ibsn) {
 
   }
 
-//   console.log(detail(demo,"iiSvXOwRsH"))
+console.log(detail(demo, "iiSvXOwRsH"))
   
   module.exports = { detail };

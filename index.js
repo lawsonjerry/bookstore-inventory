@@ -1,6 +1,7 @@
 const inform = console.log; //logs a message to the console
 const { readJSONFile, writeJSONFile } = require("./read_write"); //imported functions used to read and write JSON files
 const { buy } = require("./src/buy"); //imported function used to create books
+const { detail } = require("./src/detail") //imported function used to view detail of book by ibsn
 
 function run() {
   let writeToFile = false;
@@ -8,6 +9,7 @@ function run() {
   const action = process.argv[2];
   const title = process.argv[3];
   const price = process.argv[4];
+  const ibsn = process.argv[3]
   const genre = process.argv[5];
   const quantity = process.argv[6];
 
@@ -29,7 +31,8 @@ function run() {
       inform(action);
       break;
     case "detail":
-      inform(action);
+      const viewDetail = detail(booksPurchased, ibsn)
+      inform(action, viewDetail);
       break;
     case "return":
       inform(action);
@@ -51,3 +54,5 @@ function run() {
   }
 }
 run();
+
+
