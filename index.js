@@ -3,6 +3,7 @@ const { readJSONFile, writeJSONFile } = require("./read_write"); //imported func
 const { buy } = require("./src/buy"); //imported function used to create books
 const { detail } = require("./src/detail") //imported function used to view detail of book by ibsn
 const { remove } = require("./src/remove") //imported function used to remove a book by ibsn
+const { update } = require("./src/update") //imported function used to decrease/increase book quantity by one
 
 function run() {
   let writeToFile = false;
@@ -13,6 +14,7 @@ function run() {
   const ibsn = process.argv[3]
   const genre = process.argv[5];
   const quantity = process.argv[6];
+  const change = process.argv[4];
 
   let booksPurchased = readJSONFile("./data", "purchased.json");
 
@@ -43,7 +45,9 @@ function run() {
       inform(action);
       break;
     case "update":
-      inform(action);
+      updatedBooksPurchased = update(booksPurchased, ibsn, Number(change))
+      writeToFile = false;
+      inform(action, updatedBooksPurchased);
       break;
     case "view":
       inform(action, booksPurchased);
