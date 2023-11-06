@@ -4,6 +4,7 @@ const { buy } = require("./src/buy"); //imported function used to create books
 const { detail } = require("./src/detail") //imported function used to view detail of book by ibsn
 const { remove } = require("./src/remove") //imported function used to remove a book by ibsn
 const { update } = require("./src/update") //imported function used to decrease/increase book quantity by one
+const { total } = require("./src/total") //imported function used to view total purchases 
 
 function run() {
   let writeToFile = false;
@@ -42,7 +43,8 @@ function run() {
       inform(action, removeBook);
       break;
     case "total":
-      inform(action);
+      totalPurchase = total(booksPurchased)
+      inform(action, totalPurchase);
       break;
     case "update":
       updatedBooksPurchased = update(booksPurchased, ibsn, Number(change))
