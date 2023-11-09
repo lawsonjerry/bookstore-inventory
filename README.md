@@ -18,10 +18,15 @@ You will build a command-line Inventory Application for a bookstore. It will be 
 
 1. Add `faker-js@5`, `jest@29`, `nanoId@3`, and `chalk@?`  to dev dependencies.
 
-# Instructions
+# Features
 
-- "node index.js view" shows you which books are in stock
-- To create new items in inventory, run the makeInventory function in the inventory.js file.
-- "node index.js buy (ibsn) (quanity)" If a user needs to buy something, they need to write buy, the ibsn of the items they want to buy, and the quantity.
-- "node index.js remove (ibsn)" removes a book from the cart based on the ibsn
+- In, `inventory.js,` run ```makeInventory()``` to create new inventory using @faker & @nanoId. Items are stored in the `inventory.json` file
+- type "node index.js view" in the command-line to view what books are in stock
+- type "node index.js buy (ibsn) (quantity)" to buy an item in stock. Make sure to write in the correct "ibsn" and the quantity to add the item to cart (cart.json)
+- type "node index.js removecart (ibsn)" to remove a book from the cart based on the ibsn. By default, it only removes one item from the book's overall quantity
+
+
+# Description
+**files in package**
+- `index.js`is where the application runs from 
 
