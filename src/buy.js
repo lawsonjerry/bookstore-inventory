@@ -1,3 +1,5 @@
+//this function allows you the user to buy books based on the ibsn and quantity
+
 function buy(inventory, ibsn, quantity) {
   for (let book of inventory) {
     if (book.ibsn === ibsn) {

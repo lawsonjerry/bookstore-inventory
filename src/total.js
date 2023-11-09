@@ -3,7 +3,7 @@
 function total(purchases) {
   //calculate the total purchases
   const totalPurchases = purchases.reduce(
-    (total, book) => total + Number(book.price.replace(/[^0-9\.-]/g, "")),//had to use regEx to solve the "NAN" issue
+    (total, book) => total + Number(book.price.replace(/[^0-9\.-]/g, "")), //had to use regEx to solve the "NAN" issue
     0
   );
 
