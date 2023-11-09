@@ -28,5 +28,13 @@ You will build a command-line Inventory Application for a bookstore. It will be 
 
 # Description
 **files in package**
-- `index.js`is where the application runs from 
+- This package contains 3 folders: SCR - contains seperate functions, DATA - Contains JSON files to read and write data, TEST - contains @jest test for each function
+- `index.js`runs the application 
+- `read_write.js` contains two functions to read and write JSON files
+- `total.js` calculates the purchases in a cart and return the total + quantity
+- `remove.js` has three functions (removeFromCart, removeFromInventory, clearCart) which deletes books either from a cart or inventory
+- `buy.js` contains a function to buy items from inventory
+- `inventory.js` contains a function that generates random inventory for the book store
+- `detail.js` contains a function to view the full detail of a book 
+- `update.js` contains a function to update the quantity of a book inside the cart
 

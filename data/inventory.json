@@ -1,19 +1,11 @@
 [
   {
-    "ibsn": "9Fz8jtpcH2",
-    "bookTitle": "Hurt So Good",
-    "price": "$6.71",
-    "author": "Ada Konopelski PhD",
-    "bookGenre": "fiction",
-    "bookQuantity": "6"
-  },
-  {
     "ibsn": "6uFN5fDBa3",
     "bookTitle": "Won't Get Fooled Again",
     "price": "$6.41",
     "author": "Wilbert Armstrong",
     "bookGenre": "fiction",
-    "bookQuantity": "8"
+    "bookQuantity": 0
   },
   {
     "ibsn": "OFYw9qgwL9",
