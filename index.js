@@ -7,7 +7,7 @@ const { detail } = require("./src/detail") //imported function used to view deta
 const { remove } = require("./src/remove") //imported function used to remove a book by ibsn
 const { update } = require("./src/update") //imported function used to decrease/increase book quantity by one
 const { total } = require("./src/total") //imported function used to view total purchases 
-const { moveToCart } = require("./src/cart") //imported function to move items bought into cart
+
 
 
 
@@ -44,7 +44,7 @@ function run() {
       writeJSONFile("./data", "cart.json", booksInCart);
       break;
     case "total":
-      totalPurchase = total(booksPurchased)
+      totalPurchase = total(booksInCart)
       inform(action, totalPurchase);
       break;
     case "update":

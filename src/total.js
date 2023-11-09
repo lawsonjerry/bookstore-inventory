@@ -25,16 +25,16 @@ const demo = [
 function total (purchases) {
     //calculate the total purchases
     const totalPurchases = purchases.reduce(
-      (total, book) => total + Number(book.price),
+      (total, book) => total + Number(book.price.replace(/[^0-9\.-]/g, '')),
       0
     );
   
     //formats the total purchases to two decimal places
-    const formattedTotalPurchases = totalPurchases.toFixed(2);
+    const formattedTotalPurchases = Number(totalPurchases.toFixed(2));
   
     // Returns the total donations.
     return `$${formattedTotalPurchases}`;
   }
 
-  console.log(total(demo))
+
   module.exports = { total }
