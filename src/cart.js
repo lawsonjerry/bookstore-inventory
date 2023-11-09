@@ -98,6 +98,5 @@ function moveToCart (itemsToMove){
          return ` Your items have been successfully moved to a cart.\n Total Purchases:$${formattedTotalCartPurchases} \n Total Book Quantity: ${totalBookQuantity}` 
 
    }
-console.log(moveToCart(demo))
-
+ 
 module.exports = { moveToCart }

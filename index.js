@@ -18,11 +18,12 @@ function run() {
   const action = process.argv[2];
   let ibsn = process.argv[3];
   const quantity = process.argv[4];
+  const change = process.argv[4];
 
   // const title = process.argv[3];
   // const price = process.argv[4];
   // const genre = process.argv[5];
-  // const change = process.argv[4];
+ 
 
   let booksPurchased = readJSONFile("./data", "purchased.json");
   let booksInCart = readJSONFile("./data", "cart.json");
@@ -48,9 +49,9 @@ function run() {
       inform(action, totalPurchase);
       break;
     case "update":
-      updatedBooksPurchased = update(booksPurchased, ibsn, Number(change))
-      writeToFile = false;
-      inform(action, updatedBooksPurchased);
+      booksInCart = update(booksInCart, ibsn, Number(change));
+      writeJSONFile("./data", "cart.json", booksInCart);
+      inform(action, booksInCart);
       break;
     case "view":
       inform(action, booksInInventory);
