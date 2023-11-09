@@ -28,12 +28,17 @@ function total (purchases) {
       (total, book) => total + Number(book.price.replace(/[^0-9\.-]/g, '')),
       0
     );
+
+    const totalBookQuantity = purchases.reduce( 
+      (total, book) => total + Number(book.bookQuantity),
+      0
+      );
   
     //formats the total purchases to two decimal places
     const formattedTotalPurchases = Number(totalPurchases.toFixed(2));
   
     // Returns the total donations.
-    return `$${formattedTotalPurchases}`;
+    return `$${formattedTotalPurchases} \n Total Book Quantity: ${totalBookQuantity}`
   }
 
 

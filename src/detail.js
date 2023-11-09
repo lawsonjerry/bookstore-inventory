@@ -23,7 +23,7 @@ const demo = [
 function detail(purchased, ibsn) {
     
       const books = purchased.find((book) => book.ibsn === ibsn);
-      return books.ibsn + " " + books.bookTitle + " " + books.price + " " + books.author;
+      return books.ibsn + " " + books.bookTitle + " " + books.price + " " + books.author + " " + `Quantity: ${books.bookQuantity}`;
   
 //create an edge case if the ibsn does not match 
   }

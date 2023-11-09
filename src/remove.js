@@ -20,7 +20,7 @@ const demo = [
   },
 ];
 
-function remove(purchased, ibsn) {
+function removeFromCart(purchased, ibsn) {
   const index = purchased.findIndex((book) => book.ibsn === ibsn);
 
   if (index > -1) {
@@ -33,6 +33,20 @@ function remove(purchased, ibsn) {
   }
 }
 
+function removeFromInventory(purchased, ibsn) {
+  const index = purchased.findIndex((book) => book.ibsn === ibsn);
+
+  if (index > -1) {
+    purchased.splice(index, 1);
+    purchased[index].bookQuantity = 0
+    console.log(`your book was successfully removed from inventory`);
+    return purchased;
+  } else {
+    console.log("Book not found. No action taken");
+    return purchased;
+  }
+}
+
 // console.log(remove(demo, "3StdFrLJZt"));
 
-module.exports = { remove };
+module.exports = { removeFromCart, removeFromInventory };
