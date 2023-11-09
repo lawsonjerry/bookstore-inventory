@@ -1,10 +1,12 @@
-const { readFileSync, writeFileSync } = require("node:fs");
+const { readFileSync, writeFileSync } = require("node:fs"); //imported node utility to read and write JSON files
 
+//this function reads JSON files
 function readJSONFile(path, fileName) {
   const collection = readFileSync(`${path}/${fileName}`, "utf8");
   return collection ? JSON.parse(collection) : [];
 }
 
+//this function writes JSON files and handles any errors to prevent malformed data
 function writeJSONFile(path, fileName, data) {
   try {
   const jsonString = JSON.stringify(data);
