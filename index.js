@@ -3,7 +3,7 @@ const inform = console.log; //logs a message to the console
 const { readJSONFile, writeJSONFile } = require("./read_write"); //imported functions used to read and write JSON files
 const { buy } = require("./src/buy"); //imported function used to create books
 const { detail } = require("./src/detail"); //imported function used to view detail of book by ibsn
-const { removeFromCart, removeFromInventory } = require("./src/remove"); //imported function used to remove a book by ibsn
+const { removeFromCart, removeFromInventory, clearCart } = require("./src/remove"); //imported function used to remove a book by ibsn
 const { update } = require("./src/update"); //imported function used to decrease/increase book quantity by one
 const { total } = require("./src/total"); //imported function used to view total purchases
 
@@ -34,6 +34,11 @@ function run() {
       break;
     case "removecart":
       const removeBookFromCart = removeFromCart(booksInCart, ibsn);
+      inform(action, booksInCart);
+      writeJSONFile("./data", "cart.json", booksInCart);
+      break;
+      case "clearcart":
+      const clearTotalCart = clearCart(booksInCart);
       inform(action, booksInCart);
       writeJSONFile("./data", "cart.json", booksInCart);
       break;

@@ -47,6 +47,12 @@ function removeFromInventory(purchased, ibsn) {
   }
 }
 
+function clearCart(purchased) {
+  purchased.splice(0, purchased.length); // Remove all elements from the cart array
+  console.log(`Your cart is now empty!`)
+  return purchased;
+}
+
 // console.log(remove(demo, "3StdFrLJZt"));
 
-module.exports = { removeFromCart, removeFromInventory };
+module.exports = { removeFromCart, removeFromInventory, clearCart  };
