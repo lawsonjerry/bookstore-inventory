@@ -4,8 +4,11 @@ const { faker } = require("@faker-js/faker");
 const { readJSONFile, writeJSONFile } = require("../read_write"); //imported functions used to read and write JSON files
 
 
-let bookInventory = []; 
+
 let booksInInventory = readJSONFile("../data", "inventory.json");
+for (const book of booksInInventory){
+  console.log(book);
+}
 
 function makeInventory() {
 const books = {
@@ -19,10 +22,11 @@ const books = {
 
   booksInInventory.push(books)
   writeJSONFile("../data", "inventory.json",  booksInInventory)
-  console.log(`book has been added to inventory`)
+  console.log(`${books} has been added to inventory`)
 
 return booksInInventory;
 
 }
-console.log(makeInventory())
+
+makeInventory();
 console.log(booksInInventory)

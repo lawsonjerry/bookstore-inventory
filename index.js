@@ -1,10 +1,4 @@
 const inform = console.log; //logs a message to the console
-// const readline = require('readline');
-
-// const rl = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout
-// });
 
 
 const { readJSONFile, writeJSONFile } = require("./read_write"); //imported functions used to read and write JSON files
@@ -22,12 +16,13 @@ function run() {
   let updatedBooksPurchased = [];
   let updatedBooksInCart = [];
   const action = process.argv[2];
-  const title = process.argv[3];
-  const price = process.argv[4];
-  const ibsn = process.argv[3]
-  const genre = process.argv[5];
-  const quantity = process.argv[6];
-  const change = process.argv[4];
+  let ibsn = process.argv[3];
+  const quantity = process.argv[4];
+
+  // const title = process.argv[3];
+  // const price = process.argv[4];
+  // const genre = process.argv[5];
+  // const change = process.argv[4];
 
   let booksPurchased = readJSONFile("./data", "purchased.json");
   let booksInCart = readJSONFile("./data", "cart.json");
@@ -35,42 +30,18 @@ function run() {
 
   switch (action) {
     case "buy":
-     
-      // const confirmAddToCart = rl.question("Would you like to add this book to your cart? (Y/N)");
-
-      // if (confirmAddToCart === "Y" || confirmAddToCart === "y"){
-      //   //move the book the the cart using the 'moveToCart' function
-      //   updatedBooksInCart = moveToCart(booksPurchased, title, price, genre, quantity)
-      
-      // inform (action,updatedBooksInCart)
-      // writeJSONFile("./data", "cart.json", updatedBooksInCart);
-
-    
-      // } else {
-      //   updatedBooksPurchased = buy(booksPurchased, title, price, genre, quantity);
-      //   inform (action, 'Book was not added to cart', updatedBooksPurchased )
-      //   writeToFile = true;
-      // }
-      // updatedBooksPurchased = buy(
-      //   booksPurchased,
-      //   title,
-      //   price,
-      //   genre,
-      //   quantity
-      // );
-      // inform(action,updatedBooksPurchased);
-    
-      break;
-    case "cartAdd":
-      inform(action);
+      booksInCart.push(buy(booksInInventory, ibsn, quantity))
+      inform (action, booksInCart)
+      writeJSONFile("./data", "cart.json", booksInCart);    
       break;
     case "detail":
-      const viewDetail = detail(booksPurchased, ibsn)
+      const viewDetail = detail(booksInCart, ibsn)
       inform(action, viewDetail);
       break;
     case "remove":
-      const removeBook = remove(booksPurchased, ibsn)
-      inform(action, removeBook);
+      const removeBook = remove(booksInCart, ibsn)
+      inform(action, booksInCart);
+      writeJSONFile("./data", "cart.json", booksInCart);
       break;
     case "total":
       totalPurchase = total(booksPurchased)

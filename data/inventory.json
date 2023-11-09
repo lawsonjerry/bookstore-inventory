@@ -1,1 +1,50 @@
-[{"ibsn":"9Fz8jtpcH2","bookTitle":"Hurt So Good","price":"$6.71","author":"Ada Konopelski PhD","bookGenre":"fiction","bookQuantity":"6"},{"ibsn":"6uFN5fDBa3","bookTitle":"Won't Get Fooled Again","price":"$6.41","author":"Wilbert Armstrong","bookGenre":"fiction","bookQuantity":"8"},{"ibsn":"OFYw9qgwL9","bookTitle":"White Rabbit","price":"$9.09","author":"Loren Gleason","bookGenre":"fiction","bookQuantity":"5"}]
+[
+  {
+    "ibsn": "9Fz8jtpcH2",
+    "bookTitle": "Hurt So Good",
+    "price": "$6.71",
+    "author": "Ada Konopelski PhD",
+    "bookGenre": "fiction",
+    "bookQuantity": "6"
+  },
+  {
+    "ibsn": "6uFN5fDBa3",
+    "bookTitle": "Won't Get Fooled Again",
+    "price": "$6.41",
+    "author": "Wilbert Armstrong",
+    "bookGenre": "fiction",
+    "bookQuantity": "8"
+  },
+  {
+    "ibsn": "OFYw9qgwL9",
+    "bookTitle": "White Rabbit",
+    "price": "$9.09",
+    "author": "Loren Gleason",
+    "bookGenre": "fiction",
+    "bookQuantity": "5"
+  },
+  {
+    "ibsn": "pXKG-P7sN8",
+    "bookTitle": "How Much is That Doggy in the Window?",
+    "price": "$10.01",
+    "author": "Robin Cummerata",
+    "bookGenre": "fiction",
+    "bookQuantity": "9"
+  },
+  {
+    "ibsn": "rb6WqRfvWI",
+    "bookTitle": "One Bad Apple",
+    "price": "$8.16",
+    "author": "Ms. Rosemary Mitchell",
+    "bookGenre": "non-fiction",
+    "bookQuantity": "10"
+  },
+  {
+    "ibsn": "-7Aq3WHKGM",
+    "bookTitle": "Don't Be Cruel",
+    "price": "$9.89",
+    "author": "Jacqueline Koepp DVM",
+    "bookGenre": "non-fiction",
+    "bookQuantity": "5"
+  }
+]

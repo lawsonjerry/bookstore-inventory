@@ -25,9 +25,9 @@ function detail(purchased, ibsn) {
       const books = purchased.find((book) => book.ibsn === ibsn);
       return books.ibsn + " " + books.bookTitle + " " + books.price + " " + books.author;
   
-
+//create an edge case if the ibsn does not match 
   }
 
-console.log(detail(demo, "iiSvXOwRsH"))
+// console.log(detail(demo))
   
   module.exports = { detail };
